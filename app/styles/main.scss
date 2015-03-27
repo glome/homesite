@@ -1,6 +1,13 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 $body-bg: #f0f0f0;
+$grid-gutter-width: 0;
+//** Global textual link color.
+//$link-color: #dcdcdc
+$link-color: #e0e0e0;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 90%);
+$link-hover-decoration: none;
 
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -34,11 +41,14 @@ $body-bg: #f0f0f0;
   display: none !important;
 }
 
-.row-no-padding {
-  [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .vcenter {
@@ -49,7 +59,7 @@ $body-bg: #f0f0f0;
 }
 
 .browsehappy {
-  margin: 0.2em 0;
+  //margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
@@ -62,76 +72,70 @@ body {
 h1 {
   font-family: 'BebasNeueRegular', sans-serif;
   color: #fff;
+}
 
+footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background: #aeb0b2;
+  color: #dcdcdc;
+  height: 70px;
+  div {
+    margin-left: 20px;
+  }
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+  height: 122px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.social {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 1.1em;
+  margin: 0 10px 0 0;
+  transition: background-color 0.5s ease-out;
+  background-color: #b0b0b0;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.facebook:hover {
+  background-color: #3b5998;
+}
+.twitter:hover {
+  background: #55acee;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.navSocials {
+  display: flex;
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
 
 
 // FRONT PAGE ***********
 .contacts {
+  padding-top: 20px;
   display: flex;
   justify-content:space-around;
   align-items: center;
-  height: 250px;
+  width: 100%;
+  //height: 300px;
 }
 
 contact-card {
   img {
     margin-bottom: 15px;
   }
-  display: inline-block;
+  display: block;
   .ccLarge {
     font-family: 'BebasNeueRegular', sans-serif;
     font-size: 1.5em;
@@ -142,51 +146,223 @@ contact-card {
   }
 }
 .baseBox {
-  color: #fff;
-  height: 250px;
-
+  padding: 0 20px 0 20px;
+  h1 {
+    color: #fff;
+  }
+  //height: 170px;
+  height: 100%;
 }
 .demoBox {
   @extend .baseBox;
-  background: #5cb0ff;
 }
+
+$demoColor: #d96df5;
+
+.demoBoxBg {
+  background-color: $demoColor;
+  cursor: pointer;
+  color: #fff;
+  &:hover {
+    background-color: lighten($demoColor, 5%);
+  }
+}
+
 .businessBox {
   @extend .baseBox;
-  background: #4c92d3;
+  color: #fff;
+}
+
+$businessColor: #c82df0;
+
+.businessBoxBg {
+  cursor: pointer;
+  background-color: $businessColor;
+  &:hover {
+    background-color: lighten($businessColor, 5%);
+  }
 }
 .boxPunchLine {
+  @extend .baseBox;
   h1 {
     color: #323232;
   }
-
+  // height: 80px;
+}
+.boxPunchLineText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  // height: 180px;
 }
 .devlandBox {
   @extend .baseBox;
-  background: #323232;
+  height: 90px;
+}
+.devlandBoxText {
+  @extend .baseBox;
+  height: 100px;
+  color: #fff;
+}
+.devlandBoxBg {
+  $devlandColor: #333333;
+  cursor: pointer;
+  background-color: $devlandColor;
+  &:hover {
+    background-color: lighten($devlandColor, 5%);
+  }
+}
 
 
+
+.addresses {
+  @extend .baseBox;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.addressBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 150px;
+  div:first-child {
+    padding: 10px 0 10px 0;
+    margin: 10px 0 10px 0;
+  }
 }
 // END FRONT PAGE ***********
+
+// Business********
+.bizboxPunchLine {
+  @extend .baseBox;
+  height: 200px;
+  h1 {
+    color: #323232;
+  }
+  span {
+    font-size: 1.2em;
+  }
+}
+
+.bizUserAqBox {
+  @extend .baseBox;
+  height:100%;
+  color: #fff;
+}
+.bizUserAqBoxBg {
+  background-color: $businessColor;
+}
+.bizPersBox {
+  @extend .baseBox;
+  color: #fff;
+}
+.bizPersBoxBg {
+  background-color: $demoColor;
+}
+.bizContentBox {
+  @extend .baseBox;
+  color: #fff;
+
+}
+.bizContentBoxBg {
+  background-color: #333333;
+}
+.bizEvilBox {
+  @extend .baseBox;
+  color: #fff;
+}
+.bizEvilBoxBg {
+  background-color: #d2c8b9;
+}
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
+  h1 {
+    font-size: 4.3em;
+  }
+  .baseBox {
+    height: 300px;
+    h1 {
+      padding-top: 70px;
+      line-height: 93%;
+    }
+  }
+  .boxPunchLineText {
+    height: 300px;
+  }
+  .devlandBox {
+    height: 200px;
+  }
+  .devlandBoxText {
+    height: 200px;
+    padding-top: 125px;
+  }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+  .addressBox {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    div:first-child {
+      padding: 10px 10px 10px 10px;
+      margin: 10px 0 10px 0;
+    }
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  .bizboxPunchLine {
+    height: 250px;
+    h1 {
+      padding-top: 50px;
+    }
+    span {
+      font-size: 1.34em;
+    }
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+
+  .social {
+    margin: 0 0 0 10px;
   }
+  // h1 {
+  //   font-size: 60px;
+  // }
+  // .boxPunchLineText {
+  //   height: 150px;
+  // }
+  // .boxPunchLineText {
+  //   height: 150px;
+  // }
+  // /* Remove the padding we set earlier */
+  // .header,
+  // .marketing,
+  // .footer {
+  //   padding-left: 0;
+  //   padding-right: 0;
+  // }
+  // /* Space out the masthead */
+  // .header {
+  //   margin-bottom: 30px;
+  // }
+  // /* Remove the bottom border on the jumbotron for visual effect */
+  // .jumbotron {
+  //   border-bottom: 0;
+  // }
 }

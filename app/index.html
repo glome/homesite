@@ -1,61 +1,55 @@
 <!doctype html>
 <html class="no-js">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="glomehomepageApp" ng-strict-di>
+  <body ng-app="glomehomepageApp" ng-strict-di >
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">GLOME</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
+    <div class="container" ng-controller="LinksCtrl">
+      <div class="header">
+        <div class="brand">
+          <a ng-href="{{getUrl('home')}}">
+            <img src="images/glomeLogo.png" />
+          </a>
+        </div>
+        <div class="navSocials">
+          <a href="https://www.facebook.com/GlomeInc">
+            <div class="social facebook">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+          <a href="https://twitter.com/glomeinc">
+            <div class="social twitter">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-
-    <div class="container">
       <div ng-view></div>
+      <footer>
+        <a ng-href="{{getUrl('demo')}}" > <div>demo</div> </a>
+        <a ng-href="{{getUrl('businesses')}}"> <div>businesses</div> </a>
+        <a ng-href="{{getUrl('devland')}}" > <div>devland</div> </a>
+      </footer>
     </div>
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -69,7 +63,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/links.js"></script>
         <script src="scripts/directives/contactCard.js"></script>
         <!-- endbuild -->
 </body>

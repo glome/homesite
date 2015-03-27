@@ -1,49 +1,72 @@
-<div class="row row-no-padding equal-height">
-  <div class="col-md-6 boxPunchLine">
-    <h1>The right to be forgotten.</h1>
+<div class="row no-gutters">
+  <div class="col-sm-6 col-xs-12">
+    <div class="boxPunchLine" >
+      <h1>Removing<br> the login</h1>
+    </div>
   </div>
-  <div class="col-md-6">
-    <p>Less online hassle and more security. No login, no registration, no questions - no identity required. In a unified experience across multiple devices. With total control, you choose the data you want to share. Clear your history and cancel your account with a click, anytime.</p>
-    <p>It’s your right to be forgotten. This is Glome.
-    </p>
-  </div>
-</div>
-<div class="row row-no-padding equal-height">
-  <div class="col-md-6 demoBox">
-    <h1>Explore The Demo</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-  </div>
-  <div class="col-md-6 businessBox">
-    <h1>For businesses</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+  <div class="col-sm-6 col-xs-12">
+    <div class="boxPunchLineText" >
+      <p>Personalisation does not require identity - it only needs the context of you. Glome give you a safe and personal digital experience across all your devices.</p>
+      <p>
+      It’s your right to be served and your right to be forgotten. This is Glome.</p>
+    </div>
   </div>
 </div>
-<div class="row row-no-padding">
-  <div class="col-xs-12 devlandBox">
-    <h1>To Devland</h1>
-  </div>
+<div class="row no-gutters">
+  <a ng-href="{{getUrl('demo')}}">
+    <div class="col-sm-6 col-xs-12 demoBoxBg" >
+      <div class="demoBox"  >
+        <h1>Experience<br>Glome</h1>
+        <p>Start looking at a video on one device, continue where you left off on another. No sign-up, no sign-in nothing to install. </p>
+      </div>
+    </div>
+  </a>
+  <a ng-href="{{getUrl('businesses')}}">
+    <div class="col-sm-6 col-xs-12 businessBoxBg" >
+      <div class="businessBox">
+        <h1>For<br>businesses</h1>
+        <p>Glome is an unique platform for user acquisition, personalisation and content monetisation across multiple devices. </p>
+      </div>
+    </div>
+  </a>
 </div>
-<div class="row row-no-padding">
-  <div class="col-md-6">
-    <div class="contacts">
+<a ng-href="{{getUrl('devland')}}">
+  <div class="row no-gutters devlandBoxBg">
+    <div class="col-sm-6 col-xs-12 ">
+      <div class="devlandBox" >
+        <h1>For<br>developers</h1>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="devlandBoxText" >
+        <p>
+        Glome RESTful API offers unique tools for developers to create personalised experiences for users across multiple devices without the burden of identity.
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<div class="row no-gutters">
+  <div class="col-sm-6 col-xs-12 equal-height" >
+    <div class="contacts" >
       <contact-card contact="edi" ></contact-card>
       <contact-card contact="fere"></contact-card>
     </div>
   </div>
-  <div class="col-md-6">
-    <div>
-      <span class="glyphicon glyphicon-envelope"> </span>
-      <span>
-        contact (a) glome.me
-      </span>
-    </div>
-    <div>
-      <span class="glyphicon glyphicon-pushpin"> </span>
-      <span>
-      C/O Nemein Oy<br>
-      Vilhonvuorenkatu 11 D 8, 00500<br>
-      Helsinki, Finland<br>
-      </span>
+  <div class="col-sm-6 col-xs-12 equal-height">
+    <div class="addresses">
+      <div class="addressBox">
+        <div class="glyphicon glyphicon-envelope"> </div>
+        <div class="text-center">contact(a)glome.me</div>
+      </div>
+      <div class="addressBox">
+        <div class="glyphicon glyphicon-pushpin"> </div>
+        <div class="text-center">
+          Yliopistonkatu 5<br>
+          00100 Helsinki<br>
+          Finland
+        </div>
+      </div>
     </div>
   </div>
 </div>

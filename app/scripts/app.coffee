@@ -16,16 +16,17 @@ angular
   ]
   .config [
     '$routeProvider'
-    ($routeProvider) ->
+    '$locationProvider'
+    ($routeProvider, $locationProvider) ->
+      #$locationProvider.html5Mode(true)
       $routeProvider
-        .when '/',
+        .when '/home',
           templateUrl: 'views/main.html'
           controller: 'MainCtrl'
-        .when '/about',
-          templateUrl: 'views/about.html'
-          controller: 'AboutCtrl'
+        .when '/businesses',
+          templateUrl: 'views/businesses.html'
         .otherwise
-          redirectTo: '/'
+          redirectTo: '/home'
   ]
 
 
