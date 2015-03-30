@@ -1,5 +1,9 @@
-<img ng-src="{{contact.img}}" class="img-rounded" width="100px" />
-<div class="ccLarge"><strong>{{contact.title}}</strong></div>
-<div class="ccLarge">{{contact.name}}</div>
-<div class="ccSmall">{{contact.email}}</div>
-<div class="ccSmall">{{contact.phone}}</div>
+<img ng-src="{{contact.img}}"  width="110px" />
+<div class="ccLarge">
+  <div><strong>{{contact.title}}</strong></div>
+  <div>{{contact.first}}<br><strong>{{contact.last}}</strong></div>
+</div>
+<div class="ccSmall">
+  <div ><strong>{{contact.email_name}}</strong><br>{{contact.email_domain}}</div>
+  <div class="contactPhone">{{contact.phone}}</div>
+</div>

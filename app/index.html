@@ -25,12 +25,37 @@
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="LinksCtrl">
       <div class="header">
-        <div class="brand">
-          <a ng-href="{{getUrl('home')}}">
-            <img src="images/glomeLogo.png" />
+        <a ng-href="{{getUrl('home')}}">
+          <img src="images/glomeLogo.png" height="121px"  />
+        </a>
+        <div>
+          <img src="images/glome_logo.svg" width="80px" />
+          <span>The context<br>of you</span>
+        </div>
+      </div>
+      <div ng-view autoscroll="true"></div>
+      <footer>
+        <div>
+          <a ng-href="{{getUrl('home')}}" >
+            <span>home</span>
+          </a>
+          <a ng-href="{{getUrl('demo')}}" >
+            <span>demo</span>
+          </a>
+          <a ng-href="{{getUrl('businesses')}}">
+            <span>businesses</span>
+          </a>
+          <a ng-href="{{getUrl('devland')}}" >
+            <span>devland</span>
           </a>
         </div>
-        <div class="navSocials">
+        <div>
+          Yliopistonkatu 5, 00100<br>
+          Helsinki, Finland
+          <br>
+          contact(a)glome.me
+        </div>
+        <div id="navSocials">
           <a href="https://www.facebook.com/GlomeInc">
             <div class="social facebook">
               <i class="fa fa-facebook"></i>
@@ -42,12 +67,6 @@
             </div>
           </a>
         </div>
-      </div>
-      <div ng-view></div>
-      <footer>
-        <a ng-href="{{getUrl('demo')}}" > <div>demo</div> </a>
-        <a ng-href="{{getUrl('businesses')}}"> <div>businesses</div> </a>
-        <a ng-href="{{getUrl('devland')}}" > <div>devland</div> </a>
       </footer>
     </div>
     <!-- build:js(.) scripts/vendor.js -->

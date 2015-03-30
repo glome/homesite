@@ -13,21 +13,38 @@ angular.module 'glomehomepageApp'
     ($scope) ->
       $scope.edi =
         title: "CEO"
-        name: "Edvard Immonen"
-        email: "edi(a)glome.me"
+        first: "Edi"
+        last: "Immonen"
+        email_name: "edi"
+        email_domain: "@glome.me"
         phone: "+358 40 157 8205"
         img: "images/ngsrc/edi.png"
 
       $scope.fere =
         title: "CTO"
-        name: "Ferenc Szekely"
-        email: "ferenc(a)glome.me"
+        first: "Ferenc"
+        last: "Szekely"
+        email_name: "ferenc"
+        email_domain: "@glome.me"
         phone: "+358 40 703 5710"
         img: "images/ngsrc/fere.png"
 
+      $scope.antti_v =
+        title: "UX"
+        first: "Antti"
+        last: "Venetpalo"
+        email_name: "antti.venetpalo"
+        email_domain: "@glome.me"
+        #phone: "+358 40 703 5710"
+        img: "images/ngsrc/default_user.png"
+
+      $scope.antti_t =
+        title: "Frontend"
+        first: "Antti"
+        last: "Tuomaala"
+        email_name: "antti.tuomaala"
+        email_domain: "@glome.me"
+        #phone: "+358 40 703 5710"
+        img: "images/ngsrc/default_user.png"
 
   ]
-
-
-
-

@@ -4,7 +4,7 @@ $body-bg: #f0f0f0;
 $grid-gutter-width: 0;
 //** Global textual link color.
 //$link-color: #dcdcdc
-$link-color: #e0e0e0;
+$link-color: #969696;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 90%);
 $link-hover-decoration: none;
@@ -75,24 +75,23 @@ h1 {
 }
 
 footer {
-  margin-top: 20px;
+  position: relative;
+  margin: 20px 0 0 0;
+  padding: 0 20px 0 0;
+  background: #dedede;
+  height: 100px;
+  color: #969696;
+  width: 100%;
   display: flex;
   align-items: center;
-  background: #aeb0b2;
-  color: #dcdcdc;
-  height: 70px;
-  div {
-    margin-left: 20px;
-  }
-}
-
-
-/* Custom page header */
-.header {
-  height: 122px;
-  display: flex;
-  align-items:center;
+  font-size: 0.8em;
   justify-content: space-between;
+
+  span {
+    text-transform: uppercase;
+    margin-left: 20px;
+    display: block;
+  }
 }
 
 .social {
@@ -100,9 +99,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
   font-size: 1.1em;
   margin: 0 10px 0 0;
   transition: background-color 0.5s ease-out;
@@ -116,35 +115,69 @@ footer {
   background: #55acee;
 }
 
-.navSocials {
+#navSocials {
+  height: 38px;
+  position: absolute;
   display: flex;
+  z-index: 3;
+  top: -20px;
+  right: 20px;
+}
+
+/* Custom page header */
+.header {
+  height: 121px;
+  display: flex;
+  align-items:center;
+  > div {
+    padding-left: 7px;
+    > span {
+      color: #646464;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      display: block;
+      line-height: 90%;
+      margin-top: 4px;
+    }
+  }
 }
 
 
 // FRONT PAGE ***********
 .contacts {
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   justify-content:space-around;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   //height: 300px;
 }
 
 contact-card {
+  height:270px;
+  display: block;
   img {
     margin-bottom: 15px;
   }
-  display: block;
   .ccLarge {
     font-family: 'BebasNeueRegular', sans-serif;
     font-size: 1.5em;
     line-height: 85%;
   }
-  .ccSmall:first {
-    margin-top:15px;
+  .ccLarge div:last-child {
+    margin-top: 10px;
+  }
+  .ccSmall {
+    line-height: 85%;
+    margin-top: 10px;
+    .contactPhone {
+      margin-top: 10px;
+    }
   }
 }
+
+
 .baseBox {
   padding: 0 20px 0 20px;
   h1 {
@@ -213,8 +246,12 @@ $businessColor: #c82df0;
     background-color: lighten($devlandColor, 5%);
   }
 }
-
-
+.teamBox {
+  @extend .baseBox;
+  h1 {
+    color: #323232;
+  }
+}
 
 .addresses {
   @extend .baseBox;
@@ -301,6 +338,23 @@ $businessColor: #c82df0;
   h1 {
     font-size: 4.3em;
   }
+  footer {
+    span {
+      display: inline;
+    }
+  }
+  .contacts {
+    justify-content:flex-start;
+    padding-top: 80px;
+  }
+  contact-card {
+    .ccSmall {
+      margin-top: 10px;
+      .contactPhone {
+        margin-top: 10px;
+      }
+    }
+  }
   .baseBox {
     height: 300px;
     h1 {
@@ -341,28 +395,5 @@ $businessColor: #c82df0;
   .social {
     margin: 0 0 0 10px;
   }
-  // h1 {
-  //   font-size: 60px;
-  // }
-  // .boxPunchLineText {
-  //   height: 150px;
-  // }
-  // .boxPunchLineText {
-  //   height: 150px;
-  // }
-  // /* Remove the padding we set earlier */
-  // .header,
-  // .marketing,
-  // .footer {
-  //   padding-left: 0;
-  //   padding-right: 0;
-  // }
-  // /* Space out the masthead */
-  // .header {
-  //   margin-bottom: 30px;
-  // }
-  // /* Remove the bottom border on the jumbotron for visual effect */
-  // .jumbotron {
-  //   border-bottom: 0;
-  // }
+  
 }
