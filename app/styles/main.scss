@@ -76,7 +76,7 @@ h1 {
 
 footer {
   position: relative;
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   padding: 0 20px 0 0;
   background: #dedede;
   height: 100px;
@@ -163,13 +163,13 @@ contact-card {
   .ccLarge {
     font-family: 'BebasNeueRegular', sans-serif;
     font-size: 1.5em;
-    line-height: 85%;
+    line-height: 95%;
   }
   .ccLarge div:last-child {
     margin-top: 10px;
   }
   .ccSmall {
-    line-height: 85%;
+    line-height: 95%;
     margin-top: 10px;
     .contactPhone {
       margin-top: 10px;
@@ -179,7 +179,7 @@ contact-card {
 
 
 .baseBox {
-  padding: 0 20px 0 20px;
+  padding: 0 20px 20px 20px;
   h1 {
     color: #fff;
   }
@@ -339,6 +339,7 @@ $businessColor: #c82df0;
     font-size: 4.3em;
   }
   footer {
+    margin: 70px 0 0 0;
     span {
       display: inline;
     }
@@ -391,9 +392,10 @@ $businessColor: #c82df0;
       font-size: 1.34em;
     }
   }
-
+  .bizEvilBox, .bizContentBox {
+    min-height: 320px;
+  }
   .social {
     margin: 0 0 0 10px;
   }
-  
 }
