@@ -18,7 +18,7 @@ angular
     '$routeProvider'
     '$locationProvider'
     ($routeProvider, $locationProvider) ->
-      #$locationProvider.html5Mode(true)
+      $locationProvider.html5Mode(true)
       $routeProvider
         .when '/home',
           templateUrl: 'views/main.html'
