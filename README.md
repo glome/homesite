@@ -1,9 +1,15 @@
-# glomehomepage
+# Glome homesite
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
+This is the Glome site.
 
 ## Build & development
+
+
+```
+> npm install -g grunt grunt-cli
+> npm install 
+> bower install
+```
 
 Run `grunt` for building and `grunt serve` for preview.
 
