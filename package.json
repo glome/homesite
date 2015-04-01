@@ -1,7 +1,6 @@
 {
   "name": "homesite",
   "version": "0.0.0",
-  "dependencies": {},
   "repository": {},
   "devDependencies": {
     "coffee-script": "^1.9.1",

@@ -10,14 +10,21 @@
 ###
 angular
   .module 'glomehomepageApp', [
-    'ngRoute',
-    'ngTouch',
+    'ngRoute'
+    'ngTouch'
+    'ngAnimate'
     'glome.directives.contactCard'
+    'ngSanitize'
+    'com.2fdevs.videogular'
+    'com.2fdevs.videogular.plugins.controls'
+    'com.2fdevs.videogular.plugins.overlayplay'
+    'com.2fdevs.videogular.plugins.poster'
   ]
   .config [
     '$routeProvider'
     '$locationProvider'
-    ($routeProvider, $locationProvider) ->
+    '$animateProvider'
+    ($routeProvider, $locationProvider, $animateProvider) ->
       $routeProvider
         .when '/home',
           templateUrl: 'views/main.html'
@@ -27,7 +34,7 @@ angular
         .otherwise
           redirectTo: '/home'
 
+
+      $animateProvider.classNameFilter(/angular-animate/)
       $locationProvider.html5Mode(true)
   ]
-
-

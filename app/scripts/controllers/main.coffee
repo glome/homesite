@@ -10,7 +10,39 @@
 angular.module 'glomehomepageApp'
   .controller 'MainCtrl', [
     '$scope'
-    ($scope) ->
+    '$sce'
+    '$timeout'
+    ($scope, $sce, $timeout) ->
+      $scope.showVideoComponent = false
+
+      $scope.onPlayerStateChange = ($state) ->
+        $scope.showControls = true
+        console.log $state
+
+      $scope.onPlayerReady = (API) ->
+        console.log "API ready!"
+        $scope.showControls = false
+
+        $timeout ->
+          $scope.showVideoComponent = true
+        , 500
+
+        return
+
+      $scope.videoConfig =
+        sources: [
+          {
+            src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.mp4')
+            type: 'video/mp4'
+          }
+        ]
+        theme: 'bower_components/videogular-themes-default/videogular.css'
+        plugins:
+          poster: 'images/ngsrc/video_poster.png'
+          controls:
+            autoHide: true
+            autoHideTime: 2000
+
       $scope.contacts = [
         {
           title: "CEO"

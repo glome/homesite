@@ -13,6 +13,36 @@
   </div>
 </div>
 <div class="row no-gutters">
+  <div class="col-xs-12">
+    <videogular vg-theme="videoConfig.theme"
+                vg-update-state="onPlayerStateChange($state)"
+                vg-player-ready="onPlayerReady($API)"
+                ng-show="showVideoComponent"
+                class="glome-show-hide angular-animate">
+      <vg-media
+          vg-src="videoConfig.sources"
+          >
+      </vg-media>
+      <vg-controls vg-autohide="videoConfig.plugins.controls.autoHide" vg-autohideTime="videoConfig.plugins.controls.autoHideTime" ng-show="showControls">
+
+        <vg-play-pause-button></vg-play-pause-button>
+        <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+        <vg-scrub-bar>
+          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        </vg-scrub-bar>
+        <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+        <vg-volume>
+          <vg-mute-button></vg-mute-button>
+          <vg-volume-bar></vg-volume-bar>
+        </vg-volume>
+        <vg-fullscreen-button></vg-fullscreen-button>
+      </vg-controls>
+      <vg-overlay-play></vg-overlay-play>
+      <!-- <vg-poster vg-url='videoConfig.plugins.poster'></vg-poster> -->
+    </videogular>
+  </div>
+</div>
+<div class="row no-gutters">
   <a ng-href="{{getUrl('demo')}}">
     <div class="col-sm-6 col-xs-12 demoBoxBg" >
       <div class="demoBox"  >

@@ -14,9 +14,4 @@ angular.module('glome.directives.contactCard', [])
       scope:
         contact: '='
       templateUrl: 'views/directives/contactCard.html'
-      controller: ['$scope', ($scope) ->
-
-        console.log $scope
-        return
-      ]
   ]
