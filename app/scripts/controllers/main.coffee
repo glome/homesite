@@ -32,7 +32,7 @@ angular.module 'glomehomepageApp'
       $scope.videoConfig =
         sources: [
           {
-            src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.mp4')
+            src: $sce.trustAsResourceUrl('http://player.vimeo.com/external/124231244.hd.mp4?s=1a6916c7b3ae9c11e143cb65f7a36006&profile_id=113')
             type: 'video/mp4'
           }
         ]
@@ -67,15 +67,6 @@ angular.module 'glomehomepageApp'
           first: "Antti"
           last: "Venetpalo"
           email_name: "antti.venetpalo"
-          email_domain: "@glome.me"
-          #phone: "+358 40 703 5710"
-          img: "images/ngsrc/default_user.png"
-        }
-        {
-          title: "Frontend"
-          first: "Antti"
-          last: "Tuomaala"
-          email_name: "antti.tuomaala"
           email_domain: "@glome.me"
           #phone: "+358 40 703 5710"
           img: "images/ngsrc/default_user.png"
